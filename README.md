@@ -1,6 +1,6 @@
 Fixes: for OpenCV 4.2.0 on Ubuntu20.04
 1. all CMakeFiles.txt: set(CMAKE_CXX_FLAGS "-std=c++14")
-2. CV_AA = LINE_AA, CV_GRAY2BGR = COLOR_GRAY2BGR, CV_RGB2GRAY = COLOR_RGB2GRAY
+2. CV_AA = cv::LINE_AA, CV_GRAY2BGR = cv::COLOR_GRAY2BGR, CV_RGB2GRAY = cv::COLOR_RGB2GRAY
    - camera_model/src/intrinsic_calib.cc
    - camera_model/src/calib/CameraCalibration.cc
    - camera_model/src/chessboard/Chessboard.cc:
