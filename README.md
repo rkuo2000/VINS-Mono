@@ -1,3 +1,16 @@
+Fixes: for OpenCV 4.2.0 on Ubuntu20.04
+1. all CMakeFiles.txt: set(CMAKE_CXX_FLAGS "-std=c++14")
+2. CV_AA = LINE_AA, CV_GRAY2BGR = COLOR_GRAY2BGR, CV_RGB2GRAY = COLOR_RGB2GRAY
+   camera_model/src/intrinsic_calib.cc
+   camera_model/src/calib/CameraCalibration.cc
+   camera_model/src/chessboard/Chessboard.cc:
+   pose_graph/src/ThirdParty/DVision/BRIEF.cpp
+3. cv::CALIB_CB_ADAPTIVE_THRESH, cv::CALIB_CB_NORMALIZE_IMAGE, cv::CALIB_CB_FILTER_QUADS, cv::CALIB_CB_FAST_CHECK
+   camera_model/src/chessboard/Chessboard.cc: #inclu
+4. cv::FONT_HERSHEY_SIMPLEX
+   pose_graph/src/pose_graph.cpp
+   pose_graph/src/keyframe.cpp
+
 # VINS-Mono
 ## A Robust and Versatile Monocular Visual-Inertial State Estimator
 
