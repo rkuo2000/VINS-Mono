@@ -12,7 +12,9 @@ Fixes: for OpenCV 4.2.0 on Ubuntu20.04
 5. cv::FONT_HERSHEY_SIMPLEX
    - pose_graph/src/pose_graph.cpp
    - pose_graph/src/keyframe.cpp
-
+6. modify output_path & pose_graph_save_path ("./output" & "./output/pose_graph")
+   - .yaml in config folder
+   
 # VINS-Mono
 ## A Robust and Versatile Monocular Visual-Inertial State Estimator
 
