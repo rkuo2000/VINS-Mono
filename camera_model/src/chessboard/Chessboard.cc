@@ -148,7 +148,7 @@ Chessboard::findChessboardCornersImproved(const cv::Mat& image,
 
         if (image.channels() != 1)
         {
-            cv::cvtColor(image, norm_img, COLOR_BGR2GRAY);
+            cv::cvtColor(image, norm_img, cv::COLOR_BGR2GRAY);
             img = norm_img;
         }
 
@@ -213,8 +213,8 @@ Chessboard::findChessboardCornersImproved(const cv::Mat& image,
             // homogeneous dilation is performed, which is crucial for small,
             // distorted checkers. Use the CROSS kernel first, since its action
             // on the image is more subtle
-            cv::Mat kernel1 = cv::getStructuringElement(cv::SHAPE_CROSS, cv::Size(3,3), cv::Point(1,1));
-            cv::Mat kernel2 = cv::getStructuringElement(cv::SHAPE_RECT, cv::Size(3,3), cv::Point(1,1));
+            cv::Mat kernel1 = cv::getStructuringElement(CV_SHAPE_CROSS, cv::Size(3,3), cv::Point(1,1));
+            cv::Mat kernel2 = cv::getStructuringElement(CV_SHAPE_RECT, cv::Size(3,3), cv::Point(1,1));
 
             if (dilations >= 1)
                 cv::dilate(thresh_img, thresh_img, kernel1);
@@ -235,7 +235,7 @@ Chessboard::findChessboardCornersImproved(const cv::Mat& image,
             // because otherwise we risk screwing up filters like cvSmooth()
             cv::rectangle(thresh_img, cv::Point(0,0),
                           cv::Point(thresh_img.cols - 1, thresh_img.rows - 1),
-                          cv::RGB(255,255,255), 3, 8);
+                          CV_RGB(255,255,255), 3, 8);
 
             // Generate quadrangles in the following function
             std::vector<ChessboardQuadPtr> quads;
@@ -318,7 +318,7 @@ Chessboard::findChessboardCornersImproved(const cv::Mat& image,
         }
 
         cv::cornerSubPix(image, corners, cv::Size(11, 11), cv::Size(-1,-1),
-                         cv::TermCriteria(cv::TERMCRIT_EPS + cv::TERMCRIT_ITER, 30, 0.1));
+                         cv::TermCriteria(CV_TERMCRIT_EPS + CV_TERMCRIT_ITER, 30, 0.1));
 
         return true;
     }
