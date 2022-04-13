@@ -6,7 +6,7 @@ Fixes: for OpenCV 4.2.0 on Ubuntu20.04
    - camera_model/src/chessboard/Chessboard.cc:
    - pose_graph/src/ThirdParty/DVision/BRIEF.cpp
 3. cv::CALIB_CB_ADAPTIVE_THRESH, cv::CALIB_CB_NORMALIZE_IMAGE, cv::CALIB_CB_FILTER_QUADS, cv::CALIB_CB_FAST_CHECK
-   - camera_model/src/chessboard/Chessboard.cc: #inclu
+   - camera_model/src/chessboard/Chessboard.cc:
 4. cv::FONT_HERSHEY_SIMPLEX
    - pose_graph/src/pose_graph.cpp
    - pose_graph/src/keyframe.cpp
