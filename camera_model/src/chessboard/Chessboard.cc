@@ -2,7 +2,7 @@
 
 #include <opencv2/calib3d/calib3d.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
-
+#include<opencv2/imgproc/types_c.h>
 #include "camodocal/chessboard/ChessboardQuad.h"
 #include "camodocal/chessboard/Spline.h"
 
@@ -144,7 +144,7 @@ Chessboard::findChessboardCornersImproved(const cv::Mat& image,
     if (image.channels() != 1 || (flags & cv::CALIB_CB_NORMALIZE_IMAGE))
     {
         cv::Mat norm_img(image.rows, image.cols, 
-                         8UC1);
+                         CV_8UC1);
 
         if (image.channels() != 1)
         {
